@@ -34,14 +34,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="default.aspx">Home</a></li>
-                  <li><a href="register.aspx">Register</a></li>
-                  <li><a href="Login.aspx">Login</a></li>                
+                  <asp:PlaceHolder ID="plhPrivate" runat="server" Visible="false">
+                      <li><a href="default.aspx">Home</a></li>
+                      <li><a href="dummy.aspx">Dummy Page</a></li>
+                      <li><a href="logout.aspx">Logout</a></li>
+                </asp:PlaceHolder>
+                  <asp:PlaceHolder ID="plhPublic" runat="server">
+                      <li><a href="register.aspx">Register</a></li>
+                      <li><a href="Login.aspx">Login</a></li>  
+                  </asp:PlaceHolder>              
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-    <div>
+    <div class="container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
