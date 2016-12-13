@@ -35,8 +35,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                   <asp:PlaceHolder ID="plhPrivate" runat="server" Visible="false">
+                      <li><a href="#"><asp:LoginName id="LoginName1" runat="server" FormatString ="Welcome, {0}" CssClass="txtCap" /></a></li>
                       <li><a href="default.aspx">Home</a></li>
-                      <li><a href="dummy.aspx">Dummy Page</a></li>
+                      <li><a href="viewlist.aspx">View List</a></li>
                       <li><a href="logout.aspx">Logout</a></li>
                 </asp:PlaceHolder>
                   <asp:PlaceHolder ID="plhPublic" runat="server">
@@ -47,6 +48,7 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
+        
     <div class="container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
@@ -58,7 +60,7 @@
 <div class="row">
 	<div class="text-center color-white col-sm-12 col-lg-12">		
 		<p>
-			© Your Website.com. 
+			<small> Application Developed By Asim Habib </small>
 		</p>
 		
 	</div>
@@ -72,5 +74,6 @@
     
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

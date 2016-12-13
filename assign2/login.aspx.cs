@@ -36,8 +36,8 @@ namespace assign2
                 authenticationManager.SignIn(new Microsoft.Owin.Security.AuthenticationProperties()
                 { IsPersistent = false }, userIdentity);
 
-                // show the desired page
-                Response.Redirect("dummy.aspx");
+                // show the desired page when user logged in                
+                Response.Redirect("default.aspx");
             }
             else
             {

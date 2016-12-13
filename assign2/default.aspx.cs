@@ -10,8 +10,9 @@ namespace assign2
     public partial class _default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            var xyz = "";
+        {           
+                //display the logged in user name
+                //lbluName.Text += User.Identity.Name;
         }
     }
 }

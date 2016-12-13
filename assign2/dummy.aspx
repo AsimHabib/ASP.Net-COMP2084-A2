@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:LoginName id="LoginName1" runat="server" FormatString ="Welcome, {0}" CssClass="txtCap" />
 
 <h1>Dummy page</h1>
 <h2>This page is visible becuase you are logged in.</h2>

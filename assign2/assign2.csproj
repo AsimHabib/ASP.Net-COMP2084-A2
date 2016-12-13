@@ -96,6 +96,8 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -114,12 +116,31 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addlist.aspx" />
+    <Content Include="ATwoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ATwoModel.edmx</DependentUpon>
+      <LastGenOutput>ATwoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ATwoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ATwoModel.edmx</DependentUpon>
+      <LastGenOutput>ATwoModel.cs</LastGenOutput>
+    </Content>
     <Content Include="dummy.aspx" />
+    <Content Include="js\scripts.js" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="register.aspx" />
     <Content Include="Site.Master" />
+    <EntityDeploy Include="ATwoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ATwoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ATwoModel.edmx.diagram">
+      <DependentUpon>ATwoModel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,9 +151,49 @@
   <ItemGroup>
     <Content Include="custom.css" />
     <Content Include="default.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="viewlist.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addlist.aspx.cs">
+      <DependentUpon>addlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addlist.aspx.designer.cs">
+      <DependentUpon>addlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATwoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATwoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATwoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATwoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ATwoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +238,19 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="tbl_list_item.cs">
+      <DependentUpon>ATwoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="viewlist.aspx.cs">
+      <DependentUpon>viewlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewlist.aspx.designer.cs">
+      <DependentUpon>viewlist.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
